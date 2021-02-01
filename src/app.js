@@ -4,6 +4,8 @@ const hbs = require("hbs");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forcast");
 
@@ -79,6 +81,6 @@ app.get("*", (req, res) => {
     msg: "Not found",
   });
 });
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is running !!");
 });
